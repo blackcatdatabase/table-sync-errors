@@ -17,7 +17,7 @@ use BlackCat\Database\Support\DtoHydrator;
 final class SyncErrorDtoMapper
 {
     /** @var array<string,string> Column -> DTO property */
-    private const COL_TO_PROP = [ 'event_key' => 'eventKey', 'peer_id' => 'peerId', 'created_at' => 'createdAt' ];
+    private const COL_TO_PROP = [ 'id' => 'id', 'source' => 'source', 'event_key' => 'eventKey', 'peer_id' => 'peerId', 'error' => 'error', 'created_at' => 'createdAt' ];
 
     /** @var string[] */
     private const BOOL_COLS   = [];
