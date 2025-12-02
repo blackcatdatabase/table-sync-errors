@@ -1,4 +1,4 @@
--- Auto-generated from joins-postgres.psd1 (map@mtime:2025-11-27T17:17:38Z)
+-- Auto-generated from joins-postgres.yaml (map@94ebe6c)
 -- engine: postgres
 -- view:   sync_errors_failures_recent
 
@@ -12,5 +12,5 @@ SELECT
   e.error,
   e.created_at
 FROM sync_errors e
-WHERE e.created_at > now() - interval ''24 hours''
+WHERE e.created_at > now() - interval $$24 hours$$
 ORDER BY e.created_at DESC;
