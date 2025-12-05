@@ -1,6 +1,6 @@
 -- Auto-generated from joins-postgres.yaml (map@85230ed)
 -- engine: postgres
--- view:   sync_errors_failures_recent
+-- view:   sync_failures_recent
 
 -- Recent sync failures (24h)
 CREATE OR REPLACE VIEW vw_sync_failures_recent AS
