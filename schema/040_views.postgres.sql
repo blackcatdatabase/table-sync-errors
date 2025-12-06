@@ -1,6 +1,7 @@
--- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
+-- Auto-generated from schema-views-postgres.yaml (map@sha1:EDC13878AE5F346E7EAD2CF0A484FEB7E68F6CDD)
 -- engine: postgres
 -- table:  sync_errors
+
 -- Contract view for [sync_errors]
 CREATE OR REPLACE VIEW vw_sync_errors AS
 SELECT
@@ -11,20 +12,3 @@ SELECT
   error,
   created_at
 FROM sync_errors;
-
--- Auto-generated from schema-views-postgres.psd1 (map@62c9c93)
--- engine: postgres
--- table:  sync_errors_failures_recent
--- Recent sync failures (24h)
-CREATE OR REPLACE VIEW vw_sync_failures_recent AS
-SELECT
-  e.id,
-  e.source,
-  e.event_key,
-  e.peer_id,
-  e.error,
-  e.created_at
-FROM sync_errors e
-WHERE e.created_at > now() - interval ''24 hours''
-ORDER BY e.created_at DESC;
-
