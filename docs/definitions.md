@@ -6,11 +6,11 @@ Errors raised while applying replication batches.
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
 | created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the error was recorded. |
-| id | BIGINT | NO |  | Surrogate primary key. |
-| source | VARCHAR(100) | NO |  | Source subsystem/channel. |
-| peer_id | BIGINT | YES |  | Peer involved (FK peer_nodes.id). |
-| event_key | CHAR(36) | YES |  | Offending event key (if known). |
 | error | TEXT | NO |  | Error message. |
+| event_key | CHAR(36) | YES |  | Offending event key (if known). |
+| id | BIGINT | NO |  | Surrogate primary key. |
+| peer_id | BIGINT | YES |  | Peer involved (FK peer_nodes.id). |
+| source | VARCHAR(100) | NO |  | Source subsystem/channel. |
 
 ## Engine Details
 
