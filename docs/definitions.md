@@ -5,7 +5,7 @@ Errors raised while applying replication batches.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the error was recorded. |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the error was recorded. |
 | error | TEXT | NO |  | Error message. |
 | event_key | CHAR(36) | YES |  | Offending event key (if known). |
 | id | BIGINT | NO |  | Surrogate primary key. |
