@@ -5,12 +5,12 @@ Errors raised while applying replication batches.
 ## Columns
 | Column | Type | Null | Default | Description |
 | --- | --- | --- | --- | --- |
-| created_at | DATETIME(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the error was recorded. |
-| error | TEXT | NO |  | Error message. |
-| event_key | CHAR(36) | YES |  | Offending event key (if known). |
 | id | BIGINT | NO |  | Surrogate primary key. |
-| peer_id | BIGINT | YES |  | Peer involved (FK peer_nodes.id). |
 | source | VARCHAR(100) | NO |  | Source subsystem/channel. |
+| event_key | CHAR(36) | YES |  | Offending event key (if known). |
+| peer_id | BIGINT | YES |  | Peer involved (FK peer_nodes.id). |
+| error | TEXT | NO |  | Error message. |
+| created_at | mysql: DATETIME(6) / postgres: TIMESTAMPTZ(6) | NO | CURRENT_TIMESTAMP(6) | Timestamp when the error was recorded. |
 
 ## Engine Details
 
@@ -45,7 +45,7 @@ Foreign keys:
 ## Views
 | View | Engine | Flags | File |
 | --- | --- | --- | --- |
-| vw_sync_errors | mysql | algorithm=MERGE, security=INVOKER | [schema\040_views.mysql.sql](schema\040_views.mysql.sql) |
-| vw_sync_failures_recent | mysql | algorithm=TEMPTABLE, security=INVOKER | [schema\040_views_joins.mysql.sql](schema\040_views_joins.mysql.sql) |
-| vw_sync_errors | postgres |  | [schema\040_views.postgres.sql](schema\040_views.postgres.sql) |
-| vw_sync_failures_recent | postgres |  | [schema\040_views_joins.postgres.sql](schema\040_views_joins.postgres.sql) |
+| vw_sync_errors | mysql | algorithm=MERGE, security=INVOKER | [../schema/040_views.mysql.sql](../schema/040_views.mysql.sql) |
+| vw_sync_failures_recent | mysql | algorithm=TEMPTABLE, security=INVOKER | [../schema/040_views_joins.mysql.sql](../schema/040_views_joins.mysql.sql) |
+| vw_sync_errors | postgres |  | [../schema/040_views.postgres.sql](../schema/040_views.postgres.sql) |
+| vw_sync_failures_recent | postgres |  | [../schema/040_views_joins.postgres.sql](../schema/040_views_joins.postgres.sql) |
