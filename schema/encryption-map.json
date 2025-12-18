@@ -1,0 +1,26 @@
+{
+  "tables": {
+    "sync_errors": {
+      "columns": {
+        "created_at": {
+          "strategy": "passthrough"
+        },
+        "error": {
+          "strategy": "passthrough"
+        },
+        "event_key": {
+          "strategy": "passthrough"
+        },
+        "id": {
+          "strategy": "passthrough"
+        },
+        "peer_id": {
+          "strategy": "passthrough"
+        },
+        "source": {
+          "strategy": "passthrough"
+        }
+      }
+    }
+  }
+}
